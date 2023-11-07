@@ -1,0 +1,142 @@
+/*
+ * This file contains the CSS styles for a unit converter web application.
+ * It defines the styles for the body, titlebox, box, form, input, submit button, and result box.
+ * It also defines the styles for the footer.
+ */
+
+/* The body styling sets the background color, text color, and prevents overflow */
+body {
+  background-color: #212121;
+  color: #e8e8e8;
+  overflow: hidden;
+}
+
+/* 
+ * The #titlebox styling sets the padding, alignment, and font properties 
+ * for the title box 
+ */
+#titlebox {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 
+ * The #box styling sets the properties for the main box, including its size, 
+ * padding, background color, shadow, and font 
+ */
+#box {
+  border-radius: 10px;
+  margin: auto;
+  width: 550px;
+  padding: 40px;
+  padding-bottom: 10px;
+  background: rgba(24, 20, 20, 0.987);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  font-family: "Poppins", sans-serif;
+}
+
+/* The form styling sets the display properties for forms */
+form {
+  display: flex;
+  justify-content: center;
+}
+
+/* The ::placeholder styling sets the font size for placeholder text in input fields */
+::placeholder {
+  font-size: small;
+}
+
+/* 
+ * The #input styling sets the properties for the input field, including its size, 
+ * padding, border, background color, and margin 
+ */
+#input {
+  font-size: large;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e8e8e8;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+/* 
+ * The #fromValue and #toValue styling sets the properties for the unit 
+ * selection dropdowns, including their height, border radius, and margins 
+ */
+#fromValue,
+#toValue {
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 16px;
+  margin-right: 10px;
+}
+
+/* The #to styling sets the margin-right property for the 'to' text */
+#to {
+  margin-right: 10px;
+}
+
+/* 
+ * The #submitBox styling sets the padding and display properties for 
+ * the submit button container 
+ */
+#submitBox {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+ * The #submit styling sets the properties for the submit button, including 
+ * its border radius, border, padding, background color, font weight, cursor, 
+ * and box shadow 
+ */
+#submit {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #e8e8e8;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 5px 11px #c5c5c5;
+}
+
+/* 
+ * The #submit:active styling sets the properties for the submit button 
+ * when it is clicked, including its transform and box shadow 
+ */
+#submit:active {
+  transform: translate(0em, 0.2em);
+  box-shadow: 0px 0px 0px;
+}
+
+/* 
+ * The #resultBox styling sets the overflow, margin-top, and text-align 
+ * properties for the result box 
+ */
+#resultBox {
+  overflow: hidden;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* 
+ * The #footer styling sets the properties for the footer, including its 
+ * margin, width, font family, text alignment, font size, and color 
+ */
+#footer {
+  margin: auto;
+  margin-top: 20px;
+  width: 550px;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 0.9em;
+  color: #e8e8e8;
+}

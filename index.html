@@ -1,0 +1,64 @@
+<!-- 
+    Description: This file serves as a Unit Converter application. 
+    It contains a form that allows users to input a number and select units to convert from and to. 
+    The result of the conversion is displayed on the page. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- The head section contains meta information and links to external CSS and fonts -->
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+  </head>
+  <body>
+    <!-- The titlebox div contains the main title of the page -->
+    <div id="titlebox">
+      <h1 id="title">Unit Converter</h1>
+    </div>
+    <!-- The box div contains the main functionality of the page, including the form for unit conversion -->
+    <div id="box">
+      <form>
+        <!-- The user can input a number and select units to convert from and to -->
+        <input
+          id="input"
+          type="number"
+          step="any"
+          min="0"
+          placeholder="Enter a value"
+          onkeyup="calculate()"
+        />
+        <select id="fromValue" onchange="calculate()">
+          <option value="mph">Miles Per Hour</option>
+          <option value="kph">Kilometer Per Hour</option>
+          <option value="fps">Foot Per Second</option>
+          <option value="mps">Meter per second</option>
+          <option value="knot">Knot</option>
+        </select>
+        <p id="to">to</p>
+        <select id="toValue" onchange="calculate()">
+          <option value="mph">Miles Per Hour</option>
+          <option value="kph">Kilometer Per Hour</option>
+          <option value="fps">Foot Per Second</option>
+          <option value="mps">Meter per second</option>
+          <option value="knot">Knot</option>
+        </select>
+      </form>
+      <!-- The resultBox div displays the result of the conversion -->
+      <div id="resultBox">
+        <p id="output">0</p>
+        <p id="result">Mph</p>
+      </div>
+    </div>
+    <!-- The footer div contains the programmer's name -->
+    <div id="footer">
+      <p id="footerText">by Jesus</p>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
