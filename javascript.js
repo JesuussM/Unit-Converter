@@ -17,26 +17,14 @@ function calculate() {
     // Perform the conversion if the first unit is mph
     if (unit1 == "mph") {
         // Convert from mph to various units
-        if (unit2 == "mph") {
-            document.getElementById("output").innerHTML = number;
-            document.getElementById("result").innerHTML = "Mph";
-            return;
-        } else if (unit2 == "kph") {
-            document.getElementById("output").innerHTML = number * 1.60934;
-            document.getElementById("result").innerHTML = "Kph";
-            return;
+         if (unit2 == "kph") {
+            number *= 1.60934;
         } else if (unit2 == "fps") {
-            document.getElementById("output").innerHTML = number * 1.46667;
-            document.getElementById("result").innerHTML = "Fps";
-            return;
+            number *= 1.46667;
         } else if (unit2 == "mps") {
-            document.getElementById("output").innerHTML = number * 0.44704;
-            document.getElementById("result").innerHTML = "Mps";
-            return;
+            number *= 0.44704;
         } else if (unit2 == "knot") {
-            document.getElementById("output").innerHTML = number * 0.868976;
-            document.getElementById("result").innerHTML = "Knot";
-            return;
+            number *= 0.868976;
         }
     }
     
@@ -44,25 +32,13 @@ function calculate() {
     if (unit1 == "kph") {
         // Convert from kph to various units
         if (unit2 == "mph") {
-            document.getElementById("output").innerHTML = number * 0.621371;
-            document.getElementById("result").innerHTML = "Mph";
-            return;
-        } else if (unit2 == "kph") {
-            document.getElementById("output").innerHTML = number;
-            document.getElementById("result").innerHTML = "Kph";
-            return;
+            number *= 0.621371;
         } else if (unit2 == "fps") {
-            document.getElementById("output").innerHTML = number * 0.911344;
-            document.getElementById("result").innerHTML = "Fps";
-            return;
+            number *= 0.911344;
         } else if (unit2 == "mps") {
-            document.getElementById("output").innerHTML = number * 0.277778;
-            document.getElementById("result").innerHTML = "Mps";
-            return;
+            number *= 0.277778;
         } else if (unit2 == "knot") {
-            document.getElementById("output").innerHTML = number * 0.539957;
-            document.getElementById("result").innerHTML = "Knot";
-            return;
+            number *= 0.539957;
         }
     }
 
@@ -70,25 +46,13 @@ function calculate() {
     if (unit1 == "fps") {
         // Convert from fps to various units
         if (unit2 == "mph") {
-            document.getElementById("output").innerHTML = number * 0.681818;
-            document.getElementById("result").innerHTML = "Mph";
-            return;
+            number *= 0.681818;
         } else if (unit2 == "kph") {
-            document.getElementById("output").innerHTML = number * 1.09728;
-            document.getElementById("result").innerHTML = "Kph";
-            return;
-        } else if (unit2 == "fps") {
-            document.getElementById("output").innerHTML = number;
-            document.getElementById("result").innerHTML = "Fps";
-            return;
+            number *= 1.09728;
         } else if (unit2 == "mps") {
-            document.getElementById("output").innerHTML = number * 0.3048;
-            document.getElementById("result").innerHTML = "Mps";
-            return;
+            number *= 0.3048;
         } else if (unit2 == "knot") {
-            document.getElementById("output").innerHTML = number * 0.592484;
-            document.getElementById("result").innerHTML = "Knot";
-            return;
+            number *= 0.592484;
         }
     }
 
@@ -96,25 +60,13 @@ function calculate() {
     if (unit1 == "mps") {
         // Convert from mps to various units
         if (unit2 == "mph") {
-            document.getElementById("output").innerHTML = number * 2.23694;
-            document.getElementById("result").innerHTML = "Mph";
-            return;
+            number *= 2.23694;
         } else if (unit2 == "kph") {
-            document.getElementById("output").innerHTML = number * 3.6;
-            document.getElementById("result").innerHTML = "Kph";
-            return;
+            number *= 3.6;
         } else if (unit2 == "fps") {
-            document.getElementById("output").innerHTML = number * 3.28084;
-            document.getElementById("result").innerHTML = "Fps";
-            return;
-        } else if (unit2 == "mps") {
-            document.getElementById("output").innerHTML = number;
-            document.getElementById("result").innerHTML = "Mps";
-            return;
+            number *= 3.28084;
         } else if (unit2 == "knot") {
-            document.getElementById("output").innerHTML = number * 1.94384;
-            document.getElementById("result").innerHTML = "Knot";
-            return;
+            number *= 1.94384;
         }
     }
 
@@ -122,25 +74,17 @@ function calculate() {
     if (unit1 == "knot") {
         // Convert from knot to various units
         if (unit2 == "mph") {
-            document.getElementById("output").innerHTML = number * 1.15078;
-            document.getElementById("result").innerHTML = "Mph";
-            return;
+            number *= 1.15078;
         } else if (unit2 == "kph") {
-            document.getElementById("output").innerHTML = number * 1.852;
-            document.getElementById("result").innerHTML = "Kph";
-            return;
+            number *= 1.852;
         } else if (unit2 == "fps") {
-            document.getElementById("output").innerHTML = number * 1.68781;
-            document.getElementById("result").innerHTML = "Fps";
-            return;
+            number *= 1.68781;
         } else if (unit2 == "mps") {
-            document.getElementById("output").innerHTML = number * 0.514444;
-            document.getElementById("result").innerHTML = "Mps";
-            return;
-        } else if (unit2 == "knot") {
-            document.getElementById("output").innerHTML = number;
-            document.getElementById("result").innerHTML = "Knot";
-            return;
-        }
+            number *= 0.514444;
+        } 
     }
+
+    // Display the result and unit
+    document.getElementById("output").innerHTML = number;
+    document.getElementById("result").innerHTML = unit2.charAt(0).toUpperCase() + unit2.slice(1);
 }
