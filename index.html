@@ -31,23 +31,11 @@
           step="any"
           min="0"
           placeholder="Enter a value"
-          onkeyup="calculate()"
+          onkeyup="updateUnit()"
         />
-        <select id="fromValue" onchange="calculate()">
-          <option value="mph">Miles Per Hour</option>
-          <option value="kph">Kilometer Per Hour</option>
-          <option value="fps">Foot Per Second</option>
-          <option value="mps">Meter per second</option>
-          <option value="knot">Knot</option>
-        </select>
+        <select id="fromValue" onchange="updateUnit()"></select>
         <p id="to">to</p>
-        <select id="toValue" onchange="calculate()">
-          <option value="mph">Miles Per Hour</option>
-          <option value="kph">Kilometer Per Hour</option>
-          <option value="fps">Foot Per Second</option>
-          <option value="mps">Meter per second</option>
-          <option value="knot">Knot</option>
-        </select>
+        <select id="toValue" onchange="updateUnit()"></select>
       </form>
       <!-- The resultBox div displays the result of the conversion -->
       <div id="resultBox">

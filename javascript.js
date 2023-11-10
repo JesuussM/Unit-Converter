@@ -9,33 +9,75 @@
  * updates the HTML with the conversion result.
 */
 
+const units = {
+    "mph": {
+        name: "Mile per Hour",
+        abbreviation: "Mph",
+        conversionNumber: 1,
+        toMph: (number) => number * units.mph.conversionNumber,
+        fromMph: (number) => number * units.mph.conversionNumber
+    },
+    "kph": {
+        name: "Kilometer per Hour",
+        abbreviation: "Kph",
+        conversionNumber: 1.60934,
+        toMph: (number) => number * (1 / units.kph.conversionNumber),
+        fromMph: (number) => number * units.kph.conversionNumber
+    },
+    "fps": {
+        name: "Foot per Second",
+        abbreviation: "Fps",
+        conversionNumber: 1.46667,
+        toMph: (number) => number * (1 / units.fps.conversionNumber),
+        fromMph: (number) => number * units.fps.conversionNumber
+    },
+    "mps": {
+        name: "Meter per Second",
+        abbreviation: "Mps",
+        conversionNumber: 0.44704,
+        toMph: (number) => number * (1 / units.mps.conversionNumber),
+        fromMph: (number) => number * units.mps.conversionNumber
+    },
+    "knot": {
+        name: "Knot",
+        abbreviation: "Knot",
+        conversionNumber: 0.868976,
+        toMph: (number) => number * (1 / units.knot.conversionNumbe),
+        fromMph: (number) => number * units.knot.conversionNumber
+    }
+}
 
-function calculate() {
-    
-    // Create a map of conversion factors
-    const units = new Map([
-        ["mph_to_mph", 1],
-        ["mph_to_kph", 1.60934],
-        ["mph_to_fps", 1.46667],
-        ["mph_to_mps", 0.44704],
-        ["mph_to_knot", 0.868976],
-    ]);
+for (let unit in units) {
+    let option1 = document.createElement("option");
+    option1.value = unit;
+    option1.text = units[unit].name;
+    document.getElementById("fromValue").appendChild(option1);
 
+    let option2 = document.createElement("option");
+    option2.value = unit;
+    option2.text = units[unit].name;
+    document.getElementById("toValue").appendChild(option2);
+}
+
+function updateUnit() {
     // Retrieve the number and units from the HTML form
     let number = Number(document.getElementById("input").value);
     let unit1 = document.getElementById("fromValue").value;
     let unit2 = document.getElementById("toValue").value;
+
     
-    // converts to mph
-    let conversion = 1 / units.get("mph_to_" + unit1);
-    number *= conversion;
-    
-    // converts to unit2
-    conversion = units.get("mph_to_" + unit2);
-    number *= conversion;
-    
+    number = Math.round(calculate(number, unit1, unit2) * 100) / 100;
     // Display the result and unit
     document.getElementById("output").innerHTML = number;
-    document.getElementById("result").innerHTML = unit2.charAt(0).toUpperCase() + unit2.slice(1);
+    document.getElementById("result").innerHTML = units[unit2].abbreviation;
+}
+
+function calculate(number, unit1, unit2) {   
+    // converts to mph
+    number = units[unit1].toMph(number);
+    
+    // converts to unit2
+    number = units[unit2].fromMph(number);
+    return number;
 }
 
